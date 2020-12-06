@@ -22,12 +22,12 @@ time, mark, audio, video {
 }
 
 /* for fixed frame */
-html, body {
+/* html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
   
-}
+} */
 
 #intro {
   position: absolute;
@@ -37,12 +37,6 @@ html, body {
   width: 100%;
   text-align: center;
 }
-
-/* div {
-  align-items: center;
-  height: 300px;
-  width: 300px;
-} */
 
 canvas {
   display: block;
