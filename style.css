@@ -38,10 +38,10 @@ time, mark, audio, video {
   text-align: center;
 }
 
-canvas {
+/* canvas {
   display: block;
   vertical-align: bottom;
-}
+} */
 
 /* ---- particles.js container ---- */
 
