@@ -13,7 +13,18 @@ export interface Project {
   highlights: string[];
   github: string;
   live: string | null;
+  category: ProjectCategory[];
+  featured?: boolean;
 }
+
+export type ProjectCategory =
+  | 'AI/ML'
+  | 'Distributed Systems'
+  | 'Cloud'
+  | 'Mobile/IoT'
+  | 'Frontend'
+  | 'Backend'
+  | 'Open Source';
 
 export type Section = 'home' | 'about' | 'experience' | 'projects' | 'skills' | 'contact';
 

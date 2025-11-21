@@ -1,17 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Github,
-  Linkedin,
-  Mail,
-  ExternalLink,
-  Menu,
-  X,
-  Moon,
-  Sun,
-  ChevronDown,
-} from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, Moon, Sun, ChevronDown } from 'lucide-react';
 import { Section } from './types';
 import { experiences, projects, skills, personalInfo } from './data/content';
+import ProjectsSection from './components/ProjectsSection';
 
 const Portfolio: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -266,69 +257,7 @@ const Portfolio: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className={`py-20 px-4 ${darkMode ? 'bg-gray-800/50' : 'bg-white'}`}>
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className={`p-6 rounded-lg ${darkMode ? 'bg-gray-800 border border-gray-700' : 'bg-gray-50 shadow-lg'} hover:scale-105 transition-transform`}
-              >
-                <h3 className="text-2xl font-bold mb-2 text-blue-500">{project.title}</h3>
-                <p className={`mb-4 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {project.description}
-                </p>
-
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.map((tech, i) => (
-                      <span
-                        key={i}
-                        className={`px-3 py-1 rounded-full text-sm ${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-700'}`}
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <ul className="space-y-2 mb-4">
-                  {project.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-start text-sm">
-                      <span className="text-blue-500 mr-2">•</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="flex space-x-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-blue-500 hover:text-blue-400"
-                  >
-                    <Github size={20} className="mr-1" />
-                    Code
-                  </a>
-                  {project.live && (
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center text-blue-500 hover:text-blue-400"
-                    >
-                      <ExternalLink size={20} className="mr-1" />
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection projects={projects} darkMode={darkMode} />
 
       {/* Skills Section */}
       <section id="skills" className="py-20 px-4">
