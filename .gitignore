@@ -23,4 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 
+#Environment variables
+.env
+.env.*
+*.env.*
+
+# Custom directories and files
 old/*
+private/
