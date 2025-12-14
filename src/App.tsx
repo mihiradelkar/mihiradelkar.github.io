@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, Menu, X, Moon, Sun, ChevronDown } from 'lucide-
 import { Section } from './types';
 import { experiences, projects, skills, personalInfo } from './data/content';
 import ProjectsSection from './components/ProjectsSection';
+import { trackExternalLink, trackSectionView } from './utils/analytics';
 
 const Portfolio: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -19,7 +20,10 @@ const Portfolio: React.FC = () => {
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
+            if (activeSection !== section) {
+              setActiveSection(section);
+              trackSectionView(section); // Track section view
+            }
             break;
           }
         }
@@ -28,7 +32,7 @@ const Portfolio: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   const scrollToSection = (sectionId: Section): void => {
     const element = document.getElementById(sectionId);
@@ -135,6 +139,7 @@ const Portfolio: React.FC = () => {
           <div className="flex justify-center space-x-4 mb-8">
             <a
               href={personalInfo.github}
+              onClick={() => trackExternalLink('GitHub', 'Home')}
               target="_blank"
               rel="noopener noreferrer"
               className={`p-3 rounded-lg transition-all hover:scale-110 ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}
@@ -144,6 +149,7 @@ const Portfolio: React.FC = () => {
             </a>
             <a
               href={personalInfo.linkedin}
+              onClick={() => trackExternalLink('LinkedIn', 'Home')}
               target="_blank"
               rel="noopener noreferrer"
               className={`p-3 rounded-lg transition-all hover:scale-110 ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}
@@ -153,6 +159,7 @@ const Portfolio: React.FC = () => {
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
+              onClick={() => trackExternalLink('Email', 'Home')}
               className={`p-3 rounded-lg transition-all hover:scale-110 ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}
               aria-label="Email"
             >
@@ -297,6 +304,7 @@ const Portfolio: React.FC = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a
               href={`mailto:${personalInfo.email}`}
+              onClick={() => trackExternalLink('Email', 'Contact')}
               className="px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex items-center"
             >
               <Mail size={20} className="mr-2" />
@@ -304,6 +312,7 @@ const Portfolio: React.FC = () => {
             </a>
             <a
               href={personalInfo.linkedin}
+              onClick={() => trackExternalLink('LinkedIn', 'Contact')}
               target="_blank"
               rel="noopener noreferrer"
               className={`px-8 py-3 rounded-lg transition-colors flex items-center ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'}`}

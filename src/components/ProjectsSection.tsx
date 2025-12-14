@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Github, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import { Project, ProjectCategory } from '../types';
+import { trackExternalLink, trackFilterChange, trackProjectExpand } from '../utils/analytics';
 
 interface ProjectsSectionProps {
   projects: Project[];
@@ -36,6 +37,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, darkMode })
       newExpanded.delete(index);
     } else {
       newExpanded.add(index);
+      trackProjectExpand(displayProjects[index].title); // Track expansion
     }
     setExpandedProjects(newExpanded);
   };
@@ -55,7 +57,10 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, darkMode })
           {categories.map((category) => (
             <button
               key={category}
-              onClick={() => setActiveFilter(category)}
+              onClick={() => {
+                setActiveFilter(category);
+                trackFilterChange(category); // Track filter change
+              }}
               className={`px-4 py-2 rounded-lg font-medium transition-all ${
                 activeFilter === category
                   ? 'bg-blue-500 text-white shadow-lg scale-105'
@@ -178,6 +183,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, darkMode })
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackExternalLink('GitHub', project.title)}
                     className="flex items-center text-blue-500 hover:text-blue-400 text-sm"
                   >
                     <Github size={16} className="mr-1" />
@@ -186,6 +192,7 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects, darkMode })
                   {project.live && (
                     <a
                       href={project.live}
+                      onClick={() => trackExternalLink('GitHub', `Live Demo-${project.title}`)}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center text-blue-500 hover:text-blue-400 text-sm"
