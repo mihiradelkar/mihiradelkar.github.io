@@ -182,27 +182,26 @@ const Portfolio: React.FC = () => {
           <h2 className="text-4xl font-bold mb-8 text-center">About Me</h2>
           <div className="space-y-6 text-lg">
             <p>
-              I'm a Software Engineer currently working as a Full-Stack Developer at{' '}
-              <span className="text-blue-500 font-semibold">KeelWorks</span> and a recent graduate
-              student from{' '}
-              <span className="text-blue-500 font-semibold">Northeastern University</span> in
-              Software Engineering Systems.
+              Software Engineer with 3+ years building full-stack systems across enterprise clients
+              and startups in real estate, retail, healthcare, and edtech.
             </p>
             <p>
-              With 3+ years of professional experience, I've built scalable applications serving{' '}
-              <span className="text-blue-500 font-semibold">500K+ users</span>, designed distributed
-              systems processing{' '}
-              <span className="text-blue-500 font-semibold">1B+ messages/day</span>, and led
-              migrations from monolithic to microservices architectures.
+              At <span className="text-blue-500 font-semibold">NeoSOFT</span> I was selected as one
+              of 5 top performers for the Center of Excellence team, then moved into international
+              client engagements. At <span className="text-blue-500 font-semibold">Wasalt</span> I
+              self-identified a critical latency bottleneck in a live 500K+ user real estate CRM,
+              designed the full microservices architecture, and coordinated 20+ engineers through a
+              6-month migration — 12 services, zero downtime, 7x faster inter-service calls, 45%+
+              infra cost reduction.
             </p>
             <p>
-              I specialize in building full-stack applications using React/Next.js, Node.js, Python,
-              and Go, with extensive experience in cloud technologies (AWS, Docker, Kubernetes),
-              event-driven architectures (Kafka), and AI/ML applications (RAG systems with LLMs).
+              More recently I've been building on the AI side — engineered a Prior Authorization
+              system that takes a 3–5 day manual insurance review process and turns it into a 5–10
+              second automated decision with 95%+ clinical accuracy.
             </p>
             <p>
-              Currently seeking Software Engineering opportunities at innovative tech companies
-              where I can contribute to building impactful products.
+              MS in Software Engineering Systems,{' '}
+              <span className="text-blue-500 font-semibold">Northeastern University</span> (2025).
             </p>
             <div className="flex flex-wrap gap-4 mt-8">
               <span
@@ -214,11 +213,6 @@ const Portfolio: React.FC = () => {
                 className={`px-4 py-2 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
               >
                 📍 Boston, MA
-              </span>
-              <span
-                className={`px-4 py-2 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
-              >
-                💼 Open to opportunities
               </span>
             </div>
           </div>
@@ -298,8 +292,8 @@ const Portfolio: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
           <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-            I'm currently seeking full-time Software Engineering opportunities. Whether you have a
-            question or just want to say hi, feel free to reach out!
+            Feel free to reach out — always happy to talk about distributed systems, AI engineering,
+            or interesting problems worth solving.
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a
@@ -335,7 +329,7 @@ const Portfolio: React.FC = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <p className={darkMode ? 'text-gray-400' : 'text-gray-600'}>
-            Built with React & Tailwind CSS • © 2024 Mihir Adelkar
+            Built with React & Tailwind CSS • © 2025 Mihir Adelkar
           </p>
         </div>
       </footer>
