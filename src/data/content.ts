@@ -7,9 +7,9 @@ export const experiences: Experience[] = [
     location: 'Boston, MA (Remote)',
     period: 'Aug 2025 - Present',
     highlights: [
-      'Building Node.js microservices with Kafka async workflows and Redis caching',
-      'Developing responsive React/Next.js dashboards for workforce engagement',
-      'Deploying containerized services on AWS EKS with Docker/Terraform',
+      'Own end-to-end development of KeelCompass, internal workforce engagement forum; deliver React/TypeScript UI and Node.js/PostgreSQL microservices partnering with PM and design, enabling async collaboration for a distributed volunteer team',
+      'Automated deployment pipeline with GitHub Actions on AWS EKS, eliminating manual release steps and unblocking same-day deploys',
+      'Built reusable component library with coding standards adopted across the team, reducing onboarding time for new contributors',
     ],
   },
   {
@@ -18,10 +18,12 @@ export const experiences: Experience[] = [
     location: 'Mumbai, India',
     period: 'Jun 2021 - May 2023',
     highlights: [
-      'Built REST/GraphQL APIs with PostgreSQL/MongoDB serving 500K+ users',
-      'Led migration from monolith to Dockerized microservices (80% faster deployments)',
-      'Implemented Kafka event-driven architecture processing 1B+ messages/day',
-      'Mentored 8 junior developers through code reviews and pair programming',
+      'Selected as 1 of 5 top performers for Center of Excellence; built mf-shell (Webpack Module Federation enabling React/Angular/Vue micro-frontend composition) and Console (multi-tenant admin panel with RBAC) — both adopted as org-wide standards across 15+ teams',
+      'Self-identified latency bottleneck (400–500ms avg, 2s spikes) in live 500K+ user real estate CRM at Wasalt; designed full architecture, flow diagrams, and service migration plan; coordinated 20+ engineers over 6 months — 12 services migrated, zero downtime, 7x faster inter-service calls, 45%+ infra cost reduction via AWS rightsizing',
+      'Built Homepage Builder CMS and multi-tenant CRM for Nesto using React, Node.js, and AWS Lambda; enabled marketing to independently update pages and promotions, eliminating a recurring engineering bottleneck',
+      'Diagnosed silent pod crashes via kubectl logs, rolled back, fixed multi-tenancy edge case, redeployed within hours; built CI/CD with mandatory tests and New Relic APM dual dashboards (engineering metrics + stakeholder health view), cutting MTTR from 25 to 15 min',
+      'Built Django analytics engine aggregating per-student classroom data, visualized on Next.js dashboard — enabled teachers to monitor live attendance and engagement during class instead of waiting for post-session reports',
+      'Designed GraphQL/REST APIs with PostgreSQL and Redis caching serving 500K+ users, cutting response times 70%; established Jest/Cypress automation reaching 85% test coverage; mentored 8 junior developers and initiated bi-weekly knowledge sharing seminars',
     ],
   },
   {
@@ -30,9 +32,8 @@ export const experiences: Experience[] = [
     location: 'Ontario, Canada (Remote)',
     period: 'May 2023 - Sep 2023',
     highlights: [
-      'Stabilized React/Node.js production app with error handling and monitoring',
-      'Refactored legacy JS to TypeScript, reducing bundle size by 25%',
-      'Implemented WebSockets and SSE for real-time data streaming',
+      'Resolved production defects across XRM automotive dealership CRM (React/Node.js, Socket.IO, S3, Firebase); diagnosed stability issues across multiple modules, restoring reliable deployments',
+      'Refactored legacy JavaScript to TypeScript and introduced SonarCloud quality gates, reducing production bugs 20%',
     ],
   },
 ];
@@ -41,7 +42,7 @@ export const projects: Project[] = [
   {
     title: 'CVE Intelligence System',
     description:
-      "Enterprise-grade AI-powered security assistant processing real-time CVE data at scale. Built for Professor Tejas Parikh's Advanced Cloud Computing course, this system transforms complex vulnerability data into accessible natural language responses.",
+      'Distributed system for real-time CVE data processing with natural language query interface. Engineers can query vulnerability data in plain English instead of manually searching NVD databases.',
     tech: [
       'Go',
       'Python',
@@ -55,11 +56,9 @@ export const projects: Project[] = [
       'Prometheus',
     ],
     highlights: [
-      'Developed RAG pipeline with Pinecone vector DB and Llama3 LLM for intelligent security queries',
-      'Built distributed Golang microservices processing 1B+ messages/day with Kafka streaming',
-      'Deployed on AWS EKS with Istio service mesh for secure microservice communication',
-      'Implemented comprehensive observability with Prometheus, Grafana, and OpenTelemetry tracing',
-      'Automated infrastructure provisioning with Terraform and CI/CD with Jenkins',
+      'Built distributed microservices for real-time CVE ingestion using Kafka streaming with schema validation',
+      'Developed RAG pipeline with Pinecone vector DB and Llama 3 LLM enabling natural language security queries',
+      'Deployed on AWS EKS with Terraform IaC; configured Istio service mesh and Prometheus/Grafana monitoring with automated alerting',
     ],
     github: 'https://github.com/mihiradelkar',
     live: null,
@@ -95,7 +94,7 @@ export const projects: Project[] = [
   {
     title: 'Wasalt - Real Estate CRM',
     description:
-      'Multi-tenant enterprise CRM system for real estate marketplace with microservices architecture. Supports multiple brands and vendors with event-driven communication and real-time updates.',
+      'Self-identified critical latency bottleneck in a live 500K+ user Saudi real estate CRM. Designed full microservices architecture, presented rebuild proposal to senior leadership, and coordinated the migration across 20+ engineers.',
     tech: [
       'React',
       'TypeScript',
@@ -108,15 +107,28 @@ export const projects: Project[] = [
       'gRPC',
     ],
     highlights: [
-      'Architected Spring Boot microservices with Kafka event streaming for decoupled communication',
-      'Optimized PostgreSQL with proper indexing and Redis caching for sub-100ms response times',
-      'Built responsive React/TypeScript frontend with real-time WebSocket updates',
-      'Implemented gRPC for efficient inter-service communication and notification system',
-      'Deployed on Kubernetes with horizontal pod autoscaling and zero-downtime deployments',
+      'Audited Spring Boot monolith (400–500ms avg, 2s spikes); designed full architecture, flow diagrams, and service-by-service migration plan',
+      'Built pre-configured gRPC/Kafka microservices boilerplate to reduce team adoption friction; coordinated 20+ engineers over 6 months',
+      '12 services migrated, zero downtime, 7x faster inter-service calls, 45%+ infra cost reduction via AWS EKS rightsizing',
     ],
     github: 'https://github.com/mihiradelkar',
     live: null,
     category: ['Distributed Systems', 'Cloud', 'Frontend', 'Backend'],
+    featured: true,
+  },
+  {
+    title: 'Healthcare Prior Authorization AI',
+    description:
+      'AI system replacing 3–5 day manual insurance prior authorization reviews with automated decisions in 5–10 seconds. Built for clinical reviewers who need to trust the system before relying on it.',
+    tech: ['Python', 'FastAPI', 'Claude API', 'FHIR R4', 'MCP', 'Pinecone', 'Streamlit', 'Tesseract OCR'],
+    highlights: [
+      'Built clinical NLP pipeline mapping unstructured notes to FHIR R4 resources using Tesseract OCR; 95%+ extraction accuracy on test dataset',
+      'Designed MCP architecture for context-aware LLM reasoning combining patient data with insurance policy documents',
+      'System outputs confidence scores with full audit trails enabling reviewers to prioritize high-value claims instead of routine ones',
+    ],
+    github: 'https://github.com/mihiradelkar',
+    live: null,
+    category: ['AI/ML', 'Backend', 'Cloud'],
     featured: true,
   },
   {
@@ -309,7 +321,7 @@ export const personalInfo = {
   name: 'Mihir Ravindra Adelkar',
   title: 'Full-Stack Software Engineer',
   tagline:
-    'Building scalable, cloud-native applications with 3+ years of experience. Passionate about distributed systems, microservices, AI/ML applications, and blockchain.',
+    'Building production systems across enterprise clients, startups, and personal AI projects. Passionate about the intersection of engineering and business impact — the most interesting problems I\'ve worked on weren\'t just technical, they were about making something work better for the people depending on it.',
   email: 'adelkar.mihir@gmail.com',
   location: 'Boston, MA',
   github: 'https://github.com/mihiradelkar',

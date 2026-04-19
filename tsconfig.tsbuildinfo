@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/data/content.ts","./src/types/index.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/projectssection.tsx","./src/data/content.ts","./src/types/index.ts","./src/utils/analytics.ts"],"version":"5.9.3"}
