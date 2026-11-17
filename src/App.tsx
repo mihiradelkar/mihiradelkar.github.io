@@ -200,6 +200,13 @@ const Portfolio: React.FC = () => {
               second automated decision with 95%+ clinical accuracy.
             </p>
             <p>
+              Today I'm a <span className="text-blue-500 font-semibold">Senior Software Engineer at LTM</span>,
+              building an agentic AI platform: extracting the orchestrator into its own service behind a
+              shared model and FinOps gateway, with A2A delegation, MCP tools, and cross-session memory.
+              Before that, at <span className="text-blue-500 font-semibold">AdsGency AI</span>, I shipped a
+              partner ads API and hardened CI/CD and observability after a production outage.
+            </p>
+            <p>
               MS in Software Engineering Systems,{' '}
               <span className="text-blue-500 font-semibold">Northeastern University</span> (2025).
             </p>
@@ -212,7 +219,7 @@ const Portfolio: React.FC = () => {
               <span
                 className={`px-4 py-2 rounded-full ${darkMode ? 'bg-gray-700' : 'bg-gray-200'}`}
               >
-                📍 Boston, MA
+                📍 Houston, TX
               </span>
             </div>
           </div>
