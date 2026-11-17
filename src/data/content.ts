@@ -2,14 +2,51 @@ import { Experience, Project, SkillsMap } from '../types';
 
 export const experiences: Experience[] = [
   {
+    title: 'Senior Software Engineer',
+    company: 'LTM',
+    location: 'Houston, TX',
+    period: 'Sep 2026 - Present',
+    highlights: [
+      'Extracting an agentic orchestrator from a monolithic LangGraph service into an independently deployable service behind a shared model and FinOps gateway on AKS',
+      'Cut LLM calls for deterministic UI actions from 6 to 0 via a fast path that skips the agent graph, bringing responses down to ~0.5 s',
+      'Built an A2A client and skill-routing framework so the orchestrator can delegate to remote agents and a skill registry; integrated 8 MCP tool servers and AG-UI SSE streaming',
+      'Implemented model routing (cheap routing model vs reasoning model) and budget reserve/settle in the FinOps gateway',
+      'Built cross-session chat memory using episodic memory, so conversations carry context across sessions',
+      'Added LLM governance: LLM Guard input scanning, OPA policy boundaries, and DeepEval LLM-as-judge evaluation middleware',
+    ],
+  },
+  {
+    title: 'Software Engineer (AI Systems)',
+    company: 'AdsGency AI',
+    location: 'San Francisco, CA',
+    period: 'Jun 2026 - Sep 2026',
+    highlights: [
+      'Built and shipped a multi-tenant partner ads API end to end (creative generation, Google Demand Gen campaign launch, usage/billing), taking the partner generate path live for Google',
+      'Designed a fail-closed tenant-isolation guard with a DB-backed cross-tenant conformance test, closing a by-convention isolation risk before real ad spend',
+      'Led an org-wide CI/CD hardening program across 3 services after a ~21h production signup outage: ran the RCA and authored a phased defense-in-depth pipeline',
+      'Built the company\'s production observability from scratch: Grafana dashboards-as-code, alert rules, Sentry incident panels, and business-outcome metrics across the funnel',
+      'Replaced HTTP polling with Server-Sent Events (70% less system load) and decoupled LLM workloads with Celery + Redis async queues',
+    ],
+  },
+  {
     title: 'Full-Stack Developer',
     company: 'KeelWorks',
     location: 'Boston, MA (Remote)',
-    period: 'Aug 2025 - Present',
+    period: 'Aug 2025 - Jun 2026',
     highlights: [
       'Own end-to-end development of KeelCompass, internal workforce engagement forum; deliver React/TypeScript UI and Node.js/PostgreSQL microservices partnering with PM and design, enabling async collaboration for a distributed volunteer team',
       'Automated deployment pipeline with GitHub Actions on AWS EKS, eliminating manual release steps and unblocking same-day deploys',
       'Built reusable component library with coding standards adopted across the team, reducing onboarding time for new contributors',
+    ],
+  },
+  {
+    title: 'Software Engineer (Freelance)',
+    company: 'Dabadu.ai',
+    location: 'Ontario, Canada (Remote)',
+    period: 'May 2023 - Sep 2023',
+    highlights: [
+      'Resolved production defects across XRM automotive dealership CRM (React/Node.js, Socket.IO, S3, Firebase); diagnosed stability issues across multiple modules, restoring reliable deployments',
+      'Refactored legacy JavaScript to TypeScript and introduced SonarCloud quality gates, reducing production bugs 20%',
     ],
   },
   {
@@ -24,16 +61,6 @@ export const experiences: Experience[] = [
       'Diagnosed silent pod crashes via kubectl logs, rolled back, fixed multi-tenancy edge case, redeployed within hours; built CI/CD with mandatory tests and New Relic APM dual dashboards (engineering metrics + stakeholder health view), cutting MTTR from 25 to 15 min',
       'Built Django analytics engine aggregating per-student classroom data, visualized on Next.js dashboard — enabled teachers to monitor live attendance and engagement during class instead of waiting for post-session reports',
       'Designed GraphQL/REST APIs with PostgreSQL and Redis caching serving 500K+ users, cutting response times 70%; established Jest/Cypress automation reaching 85% test coverage; mentored 8 junior developers and initiated bi-weekly knowledge sharing seminars',
-    ],
-  },
-  {
-    title: 'Software Engineer (Freelance)',
-    company: 'Dabadu.ai',
-    location: 'Ontario, Canada (Remote)',
-    period: 'May 2023 - Sep 2023',
-    highlights: [
-      'Resolved production defects across XRM automotive dealership CRM (React/Node.js, Socket.IO, S3, Firebase); diagnosed stability issues across multiple modules, restoring reliable deployments',
-      'Refactored legacy JavaScript to TypeScript and introduced SonarCloud quality gates, reducing production bugs 20%',
     ],
   },
 ];
@@ -319,11 +346,11 @@ export const skills: SkillsMap = {
 
 export const personalInfo = {
   name: 'Mihir Ravindra Adelkar',
-  title: 'Full-Stack Software Engineer',
+  title: 'Senior Software Engineer',
   tagline:
     'Building production systems across enterprise clients, startups, and personal AI projects. Passionate about the intersection of engineering and business impact — the most interesting problems I\'ve worked on weren\'t just technical, they were about making something work better for the people depending on it.',
   email: 'adelkar.mihir@gmail.com',
-  location: 'Boston, MA',
+  location: 'Houston, TX',
   github: 'https://github.com/mihiradelkar',
   linkedin: 'https://linkedin.com/in/mihir-adelkar',
 };
